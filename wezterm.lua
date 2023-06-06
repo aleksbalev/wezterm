@@ -8,6 +8,7 @@ require("config.right-status").setup()
 require("config.notify").setup()
 require("config.tab-title").setup()
 
+
 local font_primary = "JetBrainsMono NF"
 
 local function font(name, params)
@@ -19,6 +20,10 @@ end
 --   local names = { name }
 --   return wezterm.font_with_fallback(names, params)
 -- end
+-- wezterm.on("gui-startup", function(cmd) 
+--    local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+--    window:gui_window():toggle_fillscreen()
+-- end)
 
 return {
    -- fonts
