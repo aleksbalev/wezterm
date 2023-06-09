@@ -1,9 +1,6 @@
 local wezterm = require("wezterm")
 local custom = require("colors.custom")
--- local keybindings = require("config.key-bindings")
 local launch_menu = require("config.launch-menu")
--- local ssh_domains = require("config.ssh-domains")
--- local shell = require("config.shell")
 require("config.right-status").setup()
 require("config.notify").setup()
 require("config.tab-title").setup()
@@ -15,15 +12,13 @@ local function font(name, params)
    return wezterm.font(name, params)
 end
 
--- [[ font with fallback ]]
--- local function font_with_fallback(name, params)
---   local names = { name }
---   return wezterm.font_with_fallback(names, params)
--- end
--- wezterm.on("gui-startup", function(cmd) 
---    local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
---    window:gui_window():toggle_fillscreen()
--- end)
+function getRandomImage(strings)
+   local randomIndex = math.random(1, #strings)
+   
+   local randomString = strings[randomIndex]
+   
+   return randomString
+end
 
 return {
    -- fonts
@@ -36,7 +31,7 @@ return {
    -- background
    background = {
       {
-         source = { File = wezterm.config_dir .. "/backdrops/space.jpg" },
+         source = { File = wezterm.config_dir .. "/backdrops/" .. getRandomImage({"space", "astro-jelly", "final-showdown", "pastel-samurai", "punk", "voyage"}) .. ".jpg" },
       },
       {
          source = { Color = custom.background },
