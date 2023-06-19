@@ -12,13 +12,13 @@ local function font(name, params)
    return wezterm.font(name, params)
 end
 
-function getRandomImage(strings)
-   local randomIndex = math.random(1, #strings)
-   
-   local randomString = strings[randomIndex]
-   
-   return randomString
-end
+--function getRandomImage(strings)
+--   local randomIndex = math.random(1, #strings)
+--   
+--   local randomString = strings[randomIndex]
+--   
+--   return randomString
+--end
 
 return {
    -- fonts
@@ -31,7 +31,7 @@ return {
    -- background
    background = {
       {
-         source = { File = wezterm.config_dir .. "/backdrops/" .. getRandomImage({"space", "astro-jelly", "final-showdown", "pastel-samurai", "punk", "voyage"}) .. ".jpg" },
+         source = { File = wezterm.config_dir .. "/backdrops/" .. "space" .. ".jpg" },
       },
       {
          source = { Color = custom.background },
